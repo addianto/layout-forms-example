@@ -12,7 +12,12 @@ class LayoutsFormsExample extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Layout Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ),
+        useMaterial3: true,
+      ),
       home: const ExamplePage(),
     );
   }
@@ -31,7 +36,7 @@ class ExamplePage extends StatelessWidget {
           children: <Widget>[
             const Text(
               'Widgets arranged in a Column:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Row(
