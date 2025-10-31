@@ -13,18 +13,17 @@ class LayoutsFormsExample extends StatelessWidget {
       title: 'Flutter Layout Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: const ExamplePage(),
+      initialRoute: '/',
+      routes: {'/': (context) => const OriginalExamplePage()},
     );
   }
 }
 
-class ExamplePage extends StatelessWidget {
-  const ExamplePage({super.key});
+class OriginalExamplePage extends StatelessWidget {
+  const OriginalExamplePage({super.key});
 
   @override
   Widget build(BuildContext context) {
