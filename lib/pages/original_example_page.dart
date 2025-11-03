@@ -40,6 +40,14 @@ class OriginalExamplePage extends StatelessWidget {
               label: const Text('More Widget Examples'),
               icon: const Icon(Icons.arrow_forward),
             ),
+            const SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: () {
+                unawaited(Navigator.pushNamed(context, '/form-example'));
+              },
+              label: const Text('Form Example'),
+              icon: const Icon(Icons.arrow_forward),
+            ),
           ],
         ),
       ),
