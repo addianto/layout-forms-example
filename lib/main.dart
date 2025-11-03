@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(LayoutsFormsExample());
+  runApp(const LayoutsFormsExample());
 }
 
 class LayoutsFormsExample extends StatelessWidget {
@@ -81,7 +81,7 @@ class MoreWidgetExamplesPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         children: const <Widget>[
           ExampleSection(title: '1. Container', child: _ContainerExample()),
           ExampleSection(
@@ -97,10 +97,10 @@ class MoreWidgetExamplesPage extends StatelessWidget {
 }
 
 class ExampleSection extends StatelessWidget {
+
+  const ExampleSection({required this.title, required this.child, super.key});
   final String title;
   final Widget child;
-
-  const ExampleSection({super.key, required this.title, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -110,10 +110,10 @@ class ExampleSection extends StatelessWidget {
         Text(title, style: Theme.of(context).textTheme.headlineSmall),
         const SizedBox(height: 16),
         Container(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.black26),
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(8),
           ),
           child: child,
         ),
@@ -129,11 +129,11 @@ class _ContainerExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10.0),
-      padding: const EdgeInsets.all(20.0),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.amber.shade100,
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.amber.shade600, width: 2),
       ),
       child: const Text(
@@ -175,7 +175,7 @@ class _ExpandedFlexibleExample extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         Expanded(
-          flex: 1,
+          flex: 1, // ignore: avoid_redundant_argument_values
           child: Container(
             padding: const EdgeInsets.all(8),
             color: Colors.blue,
@@ -220,12 +220,12 @@ class _GridViewExample extends StatelessWidget {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
         ),
         itemCount: 12,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
+          return Container( // ignore: use_colored_box
             color: Colors.purple.shade100,
             child: Center(child: Text('Item $index')),
           );
